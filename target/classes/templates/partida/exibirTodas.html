@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Partidas</title>
+</head>
+<body>
+<h1>Lista de Partidas</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Local</th>
+    <th>Início</th>
+    <th>Fim</th>
+    <th>Duração (minutos)</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="partida : ${lista}">
+    <td th:text="${partida.getLocal()}"></td>
+    <td th:text="${partida.getInicio()}"></td>
+    <td th:text="${partida.getFim()}"></td>
+    <td th:text="${partida.duracaoMinutos()}"></td>
+    <td>
+      <form action="" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" th:value="${partida.getId()}">
+        <input type="submit" value="Deletar">
+      </form>
+
+      <a th:href="@{/partida/cadastrar?id={id}(id=${partida.getId()})}">Editar</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

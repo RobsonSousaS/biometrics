@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Partida</title>
+</head>
+<body>
+<h1>Partida</h1>
+<p>Id: <label th:text="${partida.getId()}"></label></p>
+<p>Local: <label th:text="${partida.getLocal()}"></label></p>
+<p>Início: <label th:text="${partida.getInicio()}"></label></p>
+<p>Fim: <label th:text="${partida.getFim()}"></label></p>
+<p>Duração: <label th:text="${partida.duracaoMinutos()}"></label> minutos</p>
+</body>
+</html>

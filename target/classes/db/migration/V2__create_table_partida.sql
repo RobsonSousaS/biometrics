@@ -1,0 +1,6 @@
+CREATE TABLE partida (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    local VARCHAR(255) NOT NULL,
+    inicio DATETIME NOT NULL,
+    fim DATETIME NOT NULL
+);

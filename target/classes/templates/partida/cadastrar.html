@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Partida</title>
+</head>
+<body>
+<h1>Digite os dados da partida:</h1>
+<form action="" method="post">
+  <input th:if="${partida != null}" type="hidden" name="_method" value="put">
+  <input type="hidden" name="id" th:value="${partida?.id}">
+
+  Local: <input name="local" th:value="${partida?.getLocal()}"> <br>
+  Início: <input name="inicio" type="datetime-local" th:value="${partida?.getInicio()}"> <br>
+  Fim: <input name="fim" type="datetime-local" th:value="${partida?.getFim()}"> <br>
+  <input type="submit" value="Enviar">
+</form>
+</body>
+</html>
